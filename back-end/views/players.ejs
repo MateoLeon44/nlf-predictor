@@ -35,6 +35,9 @@
     />
     <!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">-->
   </head>
+
+<!-- Mateo León: El head se puede poner en un template de EJS -->
+
   <body>
     <div class="wrapper">
       <!-- Sidebar  -->
@@ -260,6 +263,7 @@
       <div class="overlay"></div>
     </div>
 
+
     <script src="/javascripts/listPlayers.js"></script>
     <!-- JQuery link -->
     <script
@@ -282,15 +286,19 @@
     <!-- jQuery Custom Scroller CDN -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.concat.min.js"></script>
 
+
+<!-- Mateo León: Los scripts deberían ir en un archivo javascript para desacoplar funciones -->
+
     <script type="text/javascript">
       $(document).ready(function() {
 
-        var playerResumeReference = $(".playerResume");
-        var playerListColReference = $("#playerL");
-        var playerListHeaderReference = $(".headerContent");
+ //Mateo León: Se debería reemplazar var por let o const (hay una configuración de eslint que se llama no-vars para que así sea más fácil acordarse)
+        const playerResumeReference = $(".playerResume");
+        const playerListColReference = $("#playerL");
+        const playerListHeaderReference = $(".headerContent");
 
-        var referenceCurrentHeight = playerResumeReference.innerHeight();
-        var headerHeight = playerListHeaderReference.innerHeight();
+        let referenceCurrentHeight = playerResumeReference.innerHeight();
+        let headerHeight = playerListHeaderReference.innerHeight();
 
         playerListColReference.innerHeight(
           referenceCurrentHeight ? referenceCurrentHeight -  headerHeight - 20 : 600
